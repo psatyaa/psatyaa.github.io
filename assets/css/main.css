@@ -4684,6 +4684,22 @@ input, select, textarea {
 			transform: translateX(0);
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
 			visibility: visible;
+			
+		}
+
+		.intro-content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+		}
+		
+		.profile-photo {
+			margin-right: 20px;
+			border-radius: 50%;
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
 		}
 
 	}
