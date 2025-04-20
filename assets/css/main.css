@@ -2590,6 +2590,8 @@ input, select, textarea {
 
 	.image {
 		border: 0;
+		overflow:auto; 
+
 		display: inline-block;
 		position: relative;
 	}
@@ -2688,7 +2690,11 @@ input, select, textarea {
 		margin-left: -1rem;
 		padding-left: 0;
 	}
-
+	@media screen and (max-width: 1300px) {
+		ul.actions{
+			justify-content: space-evenly
+		}
+	}
 		ul.actions li {
 			padding: 0 0 0 1rem;
 			vertical-align: middle;
@@ -2748,7 +2754,6 @@ input, select, textarea {
 			}
 
 		@media screen and (max-width: 480px) {
-
 			ul.actions:not(.fixed) {
 				-moz-flex-direction: column;
 				-webkit-flex-direction: column;
@@ -2795,7 +2800,7 @@ input, select, textarea {
 						ul.actions:not(.fixed) li .button.icon:before {
 							margin-left: -0.5rem;
 						}
-
+						
 		}
 
 /* Icons */
@@ -3234,11 +3239,12 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
-			background-size: auto,								auto,														100% auto;
-			background-position: center,								center,														top center;
-			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
+			background-image: url("../../images/personal_website_bg_img_13.jpg");
+			filter: blur(0px); /* Adjust the blur intensity as per your requirement */
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
 			z-index: -1;
 		}
 
@@ -4684,22 +4690,223 @@ input, select, textarea {
 			transform: translateX(0);
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
 			visibility: visible;
-			
-		}
-
-		.intro-content {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-direction: row;
-		}
-		
-		.profile-photo {
-			margin-right: 20px;
-			border-radius: 50%;
-			width: 150px;
-			height: 150px;
-			object-fit: cover;
 		}
 
 	}
+
+
+/* This section is created by Akrem */
+h2{
+	text-align: center;
+}
+
+.center {
+	border: 5px solid;
+	margin: auto;
+	width: 70%;
+	padding: 10px;
+  }
+
+  .spotlights > section {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	min-height: 22.5em;
+}
+
+	body.is-ie .spotlights > section {
+		min-height: 0;
+	}
+
+	.spotlights > section > .image {
+		background-position: center center;
+		background-size: cover;
+		border-radius: 0;
+		display: block;
+		position: relative;
+		width: 25em;
+	}
+
+		.spotlights > section > .image img {
+			border-radius: 0;
+			display: block;
+		}
+
+		.spotlights > section > .image:before {
+			-moz-transition: opacity 1s ease;
+			-webkit-transition: opacity 1s ease;
+			-ms-transition: opacity 1s ease;
+			transition: opacity 1s ease;
+			background: rgba(49, 36, 80, 0.9);
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+	 section > .content {
+		padding: 4em 5em 2em 5em ;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		width: 50em;
+		-ms-flex: 1;
+	}
+
+		section > .content > .inner {
+			-moz-transform: translateX(0) translateY(0);
+			-webkit-transform: translateX(0) translateY(0);
+			-ms-transform: translateX(0) translateY(0);
+			transform: translateX(0) translateY(0);
+			-moz-transition: opacity 1s ease, -moz-transform 1s ease;
+			-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+			-ms-transition: opacity 1s ease, -ms-transform 1s ease;
+			transition: opacity 1s ease, transform 1s ease;
+			opacity: 1;
+		}
+
+	.spotlights > section:nth-child(2) {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+
+	.spotlights > section:nth-child(3) {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.spotlights > section.inactive > .image:before,
+	body.is-preload .spotlights > section > .image:before {
+		opacity: 1;
+	}
+
+	.spotlights > section.inactive > .content > .inner,
+	body.is-preload .spotlights > section > .content > .inner {
+		-moz-transform: translateX(-1em);
+		-webkit-transform: translateX(-1em);
+		-ms-transform: translateX(-1em);
+		transform: translateX(-1em);
+		opacity: 0;
+	}
+	.btn-center{
+		margin-left: 100%;
+	}
+
+	@media screen and (max-width: 1680px) {
+
+		.spotlights > section > .content {
+			padding: 4em 4em 2em 4em ;
+		}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.spotlights > section {
+			display: block;
+		}
+
+			.spotlights > section > .image {
+				width: 100%;
+				height: 50vh;
+			}
+
+			.spotlights > section > .content {
+				width: 100%;
+			}
+
+			.spotlights > section.inactive > .content > .inner,
+			body.is-preload .spotlights > section > .content > .inner {
+				-moz-transform: translateY(1em);
+				-webkit-transform: translateY(1em);
+				-ms-transform: translateY(1em);
+				transform: translateY(1em);
+			}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.spotlights > section > .image {
+			height: 50vh;
+			min-height: 15em;
+		}
+
+		.spotlights > section > .content {
+			padding: 3em 2em 1em 2em ;
+		}
+
+	}
+	.diploma {
+		margin-bottom: 10px;
+	}
+	.diploma-date {
+		text-align: left;
+		font-weight: bold;
+	}
+	.diploma-title {
+		text-align: right;
+	}
+
+
+
+	@media screen and (max-width: 1680px) {
+		.img{
+			padding-top: 20%;
+		}
+	}
+
+	@media screen and (max-width: 980px) {
+		.img{
+			display: block;
+			margin: 0 auto;
+			max-width: 600px;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+		}
+
+	}
+	@media screen and (max-width: 736px) {
+		.img{
+			display: block;
+			margin: 0 auto;
+			max-width: 350px;
+			max-height: 300px;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+		}
+
+	}
+
+.education_section{
+	display: flex;
+}
+
+@media screen and (max-width: 1280px) {
+	.btn-center{
+		margin-left: 0%;
+	}
+
+	.education_section{
+		margin-top: 4em;
+	}
+}
+
